@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
 // import { terms } from './data';
 const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
     const [definitions, setDefinitions] = useState("");
-
+    const [terms, setTerms] = useState([]);
+    const history = useHistory();
+    function addNewTerm(e){
+        const newTerm=e.target.value;
+        console.log(newTerm);
+        setTerms(terms => [...terms, newTerm]);
+    }
     // const[languages, setLanguages]= useState("");
     function handleSubmit(e) {
         e.preventDefault();
+        history.push("/");
         console.log(JSON.stringify({ "term": newTerm, "definition": definitions, "userid": 1 }));
 console.log(token);
         fetch("https://wm2-glossary.herokuapp.com/api/terms/add",
@@ -54,8 +62,8 @@ console.log(token);
                         onChange={(e) => setLanguages(e.target.value)}
                     />
                 </label> */}
-                    {/* <button type="submit">Add New Term</button> */}
-                    <input type="submit" value="Submit" />
+                <button value="submit" onClick={addNewTerm}>Add New Term</button>
+                    {/* <input type="submit" value="Submit" /> */}
                 </form>
 
             </div>

@@ -19,9 +19,7 @@ const DeleteTerm = ({ token, termid, term, setTerm }) => {
         if (!window.confirm("Are you sure you wish to delete?")) {
            return
         } 
-            
-       
-        // console.log(JSON.stringify({ "termid": termIds }))
+        
         fetch("https://wm2-glossary.herokuapp.com/api/terms/delete", {
             method: "POST",
             headers: {
@@ -31,7 +29,6 @@ const DeleteTerm = ({ token, termid, term, setTerm }) => {
             body: JSON.stringify({ "termid": termid }),
         })
             .then((response) => response.json())
-        // setTermIds(termIds.filter(term => term.id === e.target.id))
             .then((data) => {
                 console.log(data);
                 history.push("/");
