@@ -8,7 +8,7 @@ const AddNewTerm = ({ token, showBtn }) => {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(JSON.stringify({ "term": newTerm, "definition": definitions, "userid": 1 }));
-
+console.log(token);
         fetch("https://wm2-glossary.herokuapp.com/api/terms/add",
             {
                 method: "POST",
@@ -31,21 +31,22 @@ const AddNewTerm = ({ token, showBtn }) => {
 
     return (
         <div className="AddTerm">
-            <div className={`${showBtn ? "active" : ""} show`}>
+            {/* <div className={`${showBtn ? "active" : ""} show`}> */}
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        <h5>Term</h5>
+                <label></label><br></br>TERM
+                        
 
                         <textarea value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
 
-                    </label>
-                    <label>
-                        <h5>Definition</h5>
+                    
+                    
+                <label></label><br></br>Definition
+                
                         <textarea value={definitions}
                             onChange={(e) => setDefinitions(e.target.value)} />
 
 
-                    </label>
+                   
                     {/* <label>
                     <h5>languages</h5>
                     <input type=""
@@ -58,7 +59,7 @@ const AddNewTerm = ({ token, showBtn }) => {
                 </form>
 
             </div>
-        </div>
+        // </div>
     )
 
 }

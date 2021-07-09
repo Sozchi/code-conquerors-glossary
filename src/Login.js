@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 const customStyles = {
     content: {
@@ -12,10 +12,11 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-const Login = (setToken) => {
+const Login = ({ setToken, token }) => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
+    const [password, setPassword] 
+= useState("");
+    // let isAuth= !!token;
     let subtitle;
     const [modalIsOpen, setIsOpen] = React.useState(false);
     function handleSubmit(e) {
@@ -51,9 +52,30 @@ const Login = (setToken) => {
     function closeModal() {
         setIsOpen(false);
     }
+    const handleLogout = () => {
+        
+        setEmail("");
+        setPassword("");
+        localStorage.clear();
+        setToken("");
+        
+    };
+    // if (email) {
+    //     return (
+    //         <div>
+    //             {email.name} is loggged in
+    //             <button onClick={handleLogout}>logout</button>
+    //         </div>
+    //     );
+    // }
+    
+
+    
     return (
         <div id="yourAppElement">
-            <button onClick={openModal}>LOGIN</button>
+            {token.length=== 0 ? (
+                <button onClick={openModal} >LOGIN</button>)
+            :(<button onClick={handleLogout}>LOGOUT</button>)}
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}
@@ -63,7 +85,7 @@ const Login = (setToken) => {
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>LOGIN</h2>
                 <button onClick={closeModal}>close</button>
-                
+
                 <form onSubmit={handleSubmit}>
                     <label>Username</label><br></br>
                     <input
@@ -80,7 +102,7 @@ const Login = (setToken) => {
                         onChange={(event) => setPassword(event.target.value)} className="login-box"
                     /><br></br>
                     <button type="submit" className="submit-btn">SUBMIT</button>
-                    <button onClick={(e) => { e.preventDefault(); setIsOpen(false) }}>X</button>
+                    <button onClick={(e) => { e.preventDefault(); setIsOpen(false) }}>X</button> 
                 </form>
 
             </Modal>
@@ -89,3 +111,4 @@ const Login = (setToken) => {
     )
 };
 export default Login;
+// { Login ? "login" : "log out" }
