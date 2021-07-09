@@ -6,10 +6,10 @@
 }
 
 .nav{
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   justify-content: space-around;
-  /* align-items: left; */
+  align-items: left;
   min-height: 5vh;
   background-color: white;
 }
@@ -24,8 +24,8 @@ nav img{
   height: fit-content;
   margin: 0;
   padding: 0;
-  /* display: inline-block; */
-  text-align: center;
+  display: inline-block;
+  /* text-align: center; */
 }
 
 .Input form input {
@@ -93,12 +93,12 @@ a {
 }
 
 
-/* .AddTerm form {
+.AddTerm form {
   align-items: center;
   display: flex;
   flex-direction: column;
   resize: none;
-} */
+}
 
 /* h2 {
   text-decoration-color: black;
@@ -121,7 +121,7 @@ a {
   text-decoration-color: black;
 } */
 
-/* .icon {
+.icon {
   position: relative;
   width: 80px;
   display: flex;
@@ -130,17 +130,17 @@ a {
   background: blue;
   cursor: pointer;
   border-radius: 24px;
-} */
+}
 
-/* .modal-wrapper {
+.modal-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-} */
+}
 
-/* .form-box {
+.form-box {
   margin-top: 7vh;
   opacity: 80%;
   background-color: rgb(236, 15, 15);
@@ -148,9 +148,9 @@ a {
   padding-left: 80px;
   border-radius: 20px;
   box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
-} */
+}
 
-/* .submit-btn {
+.submit-btn {
   width: 75%;
   justify-content: center;
   align-items: center;
@@ -165,8 +165,9 @@ a {
   outline: none;
   cursor: pointer;
   margin-bottom: 20px;
-} */
-/* .login-box {
+}
+
+.login-box {
   border: 1px solid lightgrey;
   display: flex;
   justify-content: center;
@@ -182,9 +183,9 @@ a {
   transition: 1s;
   outline: none;
   float: left;
-} */
+}
 
-/* .modal-box {
+.modal-box {
   width: 100%;
   color: white;
   border-bottom: 2px solid white;
@@ -196,24 +197,25 @@ a {
   justify-content: center;
   align-items: center;
   padding-top: 5vh;
-} */
+}
 
-/* label {
+label {
   color: white;
   width: 100%;
   text-align: center;
-} */
+}
 
 
-/* .show {
+.show {
   display: block;
   transition: 800ms;
   opacity: 1;
 }
+
 .show.active {
   transform: translateY(100px) scale(0) rotateY(180deg);
   opacity: 0;
-} */
+}
 
 
 /* .App-logo {
