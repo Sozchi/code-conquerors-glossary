@@ -11,7 +11,7 @@ const Nav = ({ setToken, open, setOpen, token, handleLoginClick, showBtn, setSho
   
     return (
       <BrowserRouter>
-        <nav className="">
+        <nav className="nav">
           <a href="/">
           <img
              src="https://codeyourfuture.io/wp-content/uploads/2019/03/cyf_brand.png" 
