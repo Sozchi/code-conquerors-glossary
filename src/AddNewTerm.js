@@ -1,5 +1,18 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
+import ReactDOM from 'react-dom';
+import { Editor, EditorState } from 'draft-js';
+import 'draft-js/dist/Draft.css';
+
+function MyEditor() {
+    const [editorState, setEditorState] = React.useState(
+        () => EditorState.createEmpty(),
+    );
+
+    return <Editor editorState={editorState} onChange={setEditorState} />;
+}
+
+ReactDOM.render(<MyEditor />, document.getElementById('container'));
 // import { terms } from './data';
 const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
@@ -14,7 +27,7 @@ const AddNewTerm = ({ token, showBtn }) => {
     // const[languages, setLanguages]= useState("");
     function handleSubmit(e) {
         e.preventDefault();
-        history.push("/");
+       
         console.log(JSON.stringify({ "term": newTerm, "definition": definitions, "userid": 1 }));
 console.log(token);
         fetch("https://wm2-glossary.herokuapp.com/api/terms/add",
@@ -29,9 +42,13 @@ console.log(token);
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
+                alert("New term has been added successfully" );
+                history.push("/");
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
+                alert("error occur new term is not added");
             })
 
 
@@ -42,28 +59,12 @@ console.log(token);
             {/* <div className={`${showBtn ? "active" : ""} show`}> */}
                 <form onSubmit={handleSubmit}>
                 <label></label><br></br>TERM
-                        
-
-                        <textarea value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
-
-                    
-                    
+                             <textarea value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
                 <label></label><br></br>Definition
                 
                         <textarea value={definitions}
                             onChange={(e) => setDefinitions(e.target.value)} />
-
-
-                   
-                    {/* <label>
-                    <h5>languages</h5>
-                    <input type=""
-                        value={definitions}
-                        onChange={(e) => setLanguages(e.target.value)}
-                    />
-                </label> */}
-                <button value="submit" onClick={addNewTerm}>Add New Term</button>
-                    {/* <input type="submit" value="Submit" /> */}
+                    <input type="submit" value="Submit" />
                 </form>
 
             </div>
