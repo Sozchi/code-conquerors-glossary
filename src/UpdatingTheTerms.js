@@ -47,31 +47,52 @@ setDefinitions(term.definition);
     console.log(term);
 
     return (
-        <React.Fragment>
-    <div
-        style={{
-          display: "flex",
-          justifyContent: "right",
-          alignItems: "center",
-          height: "20vh"
-        }}
-      >
-    
-        <Button onClick={() => {setShow(true); (edit(term))}} >EDIT</Button>
-   
-      </div>
-      <Modal show={show} onClose={() => setShow(true)}>
-        <div className="update">
-            <form onSubmit={handleSubmit}>
-                <h2>Update Term</h2>
-                <label></label> <br></br>Term
-                <textarea value={terms} onChange={(e) => setTerms(e.target.value)} />
-                <label></label> <br></br>Definition 
-                <textarea value={definitions} onChange={(e) => setDefinitions(e.target.value)} />
+      <React.Fragment>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "right",
+            alignItems: "center",
+            height: "20vh",
+          }}
+        >
+          <Button
+            onClick={() => {
+              setShow(true);
+              edit(term);
+            }}
+          >
+            EDIT
+          </Button>
+        </div>
+            <Modal show={show} onClose={() => setShow( true )}>
                 
-                <Button
-                    onClick={onClose}
-                    style={{
+            <div className="update">
+                    
+                <form onSubmit={handleSubmit}>
+                    <h2>Update Term</h2>
+                        
+                    <label></label> <br></br>Term
+                    <textarea
+                    className="Textarea1"
+                    value={terms}
+                    onChange={(e) => setTerms(e.target.value)}
+                    />
+                        
+                   <label></label> <br></br>Definition
+                   <textarea
+                    className="Textarea2"
+                    value={definitions}
+                    onChange={(e) => setDefinitions(e.target.value)}
+                   />
+                        
+                    <button type="submit" id="button4">
+                       SAVE
+                    </button>
+                        
+                    <Button
+                        onClick={onClose}
+                        style={{
                         width: 60,
                         height: 40,
                         position: "fixed",
@@ -79,20 +100,14 @@ setDefinitions(term.definition);
                         right: 0,
                         margin: "1rem",
                         cursor: "pointer",
-                        
-                    }}
-                //     className={styles.close__btn}
-                 >
-                  
-          Close
-        </Button> 
-                {/* <label> </label>TermId:
-                <input type="text" value={term.termid} onChange={(e) => setTermId(e.target.value)} /> */}
-                <button type="submit" id="button4">SAVE</button>
-            </form>
-        </div>
-          </Modal>
-    </React.Fragment >
+                        }}
+                        >
+                        Close
+                    </Button>
+                </form>
+            </div>
+        </Modal>
+      </React.Fragment>
     );
 
 }

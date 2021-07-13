@@ -247,8 +247,15 @@ label {
 
 .update{
   box-shadow: 1px;
-  text-align: justify;
+  text-align: centre;
   padding: 10px;
   border-radius: 10px;
 }
 
+.Textarea1{
+ text-align: center;
+}
+
+.Textarea2{
+  text-align: center;
+}
