@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import ReactDOM from 'react-dom';
-import { Editor, EditorState } from 'draft-js';
+// import { Editor, EditorState } from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
 // function MyEditor() {
