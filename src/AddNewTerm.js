@@ -4,20 +4,27 @@ import ReactDOM from 'react-dom';
 import { Editor, EditorState } from 'draft-js';
 import 'draft-js/dist/Draft.css';
 
-function MyEditor() {
-    const [editorState, setEditorState] = React.useState(
-        () => EditorState.createEmpty(),
-    );
 
-    return <Editor editorState={editorState} onChange={setEditorState} />;
-}
+// function MyEditor() {
+//     const [editorState, setEditorState] = React.useState(
+//         () => EditorState.createEmpty(),
+//     );
 
-ReactDOM.render(<MyEditor />, document.getElementById('container'));
+//     return <Editor editorState={editorState} onChange={setEditorState} />;
+// }
+
+
+
+
 // import { terms } from './data';
 const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
     const [definitions, setDefinitions] = useState("");
     const [terms, setTerms] = useState([]);
+    const [editorState, setEditorState] = React.useState(
+        () => EditorState.createEmpty(),
+    );
+
     const history = useHistory();
     function addNewTerm(e){
         const newTerm=e.target.value;
@@ -56,19 +63,27 @@ console.log(token);
 
     return (
         <div className="AddTerm">
+            <Editor
+                editorState={editorState} onChange={setEditorState} />
+           
             {/* <div className={`${showBtn ? "active" : ""} show`}> */}
+            {/* <div> */}
                 <form onSubmit={handleSubmit}>
                 <label></label><br></br>TERM
                              <textarea value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
                 <label></label><br></br>Definition
                 
                         <textarea value={definitions}
-                            onChange={(e) => setDefinitions(e.target.value)} />
+                    onChange={(e) => setDefinitions(e.target.value)} />
+                
+                
+                            
                     <input type="submit" value="Submit" />
                 </form>
 
             </div>
-        // </div>
+            
+        //  </div>
     )
 
 }
