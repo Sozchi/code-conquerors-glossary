@@ -55,28 +55,20 @@ console.log(token);
     return (
         <div className="AddTerm">
              
-           
-            {/* <div className={`${showBtn ? "active" : ""} show`}> */}
-                 <form onSubmit={handleSubmit}>  
-                 <label></label><br></br>TERM  
+            <form onSubmit={handleSubmit}>  
+                <label></label><br></br>TERM  
                              
-                            <textarea  value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
+                <textarea  value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
                 <label></label><br></br>Definition
-                
-                         <textarea value={definitions}
-                              onChange={(e) => setDefinitions(e.target.value)} /> 
-                              {/* <Editor editorState={editorState}  /> */}
+                <textarea className="Textarea" value={definitions}
+                onChange={(e) => setDefinitions(e.target.value)} /> 
                            
-                          
-                    <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" />
                      
-                 </form>
+            </form>
                 
-               
-                          
-                
-            </div>
-        // </div>
+        </div>
+        
     )
 
 }
