@@ -42,10 +42,10 @@ const SingleTermPage = ({setToken, token, terms}) => {
         }
         return item;
     }
-    const updateTerm = (id, termname, definitions) => {
-        setTerm( { ...term, term: termname, definition: definitions });
-        terms.map((t) => (t.id === id ? term : t))
-    }
+    // const updateTerm = (id, termname, definitions) => {
+    //     setTerm( { ...term, term: termname, definition: definitions });
+    //     terms.map((t) => (t.id === id ? term : t))
+    // }
 
     return (
         <div>
@@ -71,7 +71,7 @@ const SingleTermPage = ({setToken, token, terms}) => {
                     }
                 </ul>
                 {token ? (<DeleteTerm token={token} termid={term.termid}/>) : null}
-                {token ? (<UpdatingTheTerms token={token} term={term} updateTerm={updateTerm} />) : null}
+                {token ? (<UpdatingTheTerms token={token} term={term}  />) : null}
                 {/* {token ? (<button>hello</button>) : null} */}
             </div>
         </div>

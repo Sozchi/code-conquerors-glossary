@@ -13,6 +13,13 @@
   min-height: 5vh;
   background-color: white;
 }
+.button{
+  top: 0;
+  right: 0;
+  position: absolute;
+  margin-top: 1px;
+  margin-right: 1px;
+}
 
 nav img{
   width: 147px;
