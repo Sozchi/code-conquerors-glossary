@@ -15,16 +15,17 @@ const Modal = ({ modalStyle, children, show, onClose, backdropStyle }) => {
     return (
         <React.Fragment>
             <div ref={modalRef} style={backdropStyle} className={`${styles.modal}`}>
-                <Button
+                {/* <Button
                     onClick={onClose}
                     style={{
                         width: 60,
                         height: 40,
-                        position: "absolute",
+                        position: "fixed",
                         top: 0,
                         right: 0,
                         margin: "1rem",
-                        cursor: "pointer"
+                        cursor: "pointer",
+                        
                     }}
                     className={styles.close__btn}
                 >
@@ -33,8 +34,8 @@ const Modal = ({ modalStyle, children, show, onClose, backdropStyle }) => {
                         width="20px"
                         className={styles.close__icon}
                     /> */}
-          Close
-        </Button>
+          {/* Close
+        </Button>  */}
                 <div style={modalStyle} className={styles.modal__wrap}>
                     {children}
                 </div>

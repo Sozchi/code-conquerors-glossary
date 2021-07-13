@@ -63,7 +63,8 @@ setDefinitions(term.definition);
       <Modal show={show} onClose={() => setShow(false)}>
         <div className="update">
             <form onSubmit={handleSubmit}>
-                <label>Update Term </label> <br></br>Term:
+                <h2>Update Term</h2>
+                <label> </label> <br></br>Term:
                 <textarea value={terms} onChange={(e) => setTerms(e.target.value)} />
                 <label></label> <br></br>Definition: 
                 <textarea value={definitions} onChange={(e) => setDefinitions(e.target.value)} />
