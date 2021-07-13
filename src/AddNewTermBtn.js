@@ -15,7 +15,7 @@ function AddNewTermBtn({ handleLoginClick}) {
         <div className="update">
             <div>
                 {/* <span onClick={handleClick} className="icon">ADD NEW TERM</span> */}
-                <a href={`/addNewTerm`}><Button>ADD NEW TERM</Button></a>
+                <a href={`/addNewTerm`}><Button>NEW TERM</Button></a>
                 
             </div>
         </div>
