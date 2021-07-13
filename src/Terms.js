@@ -24,9 +24,9 @@ const Terms = ({ terms, search, resources, setSearch, setToken, token, handleLog
         history.push(`/singleTermPage/${id}`);
     }
     let prevLetter = '';
+   
     return (
         <div>
-            {/* <Nav setToken={setToken} token={token} handleLoginClick={handleLoginClick}/> */}
             <div className="Terms">
                 <SearchButton search={search} setSearch={setSearch} />
                 {/* <Alphabet /> */}
