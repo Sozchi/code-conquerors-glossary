@@ -12,7 +12,6 @@ function SearchButton({ search, setSearch }) {
     return (
       <div className="Input">
         <form>
-          <FcSearch size="25px" className="fcSearch"/>
           <input
             type="text"
             name="search"
@@ -20,6 +19,7 @@ function SearchButton({ search, setSearch }) {
             onChange={handleChange}
             placeholder="Search term..."
           />
+          <FcSearch size="25px" className="fcSearch" />
         </form>
       </div>
     );
