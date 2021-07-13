@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import Button from "./Button";
 function AddNewTermBtn({ handleLoginClick}) {
     const history = useHistory();
 
@@ -14,7 +15,7 @@ function AddNewTermBtn({ handleLoginClick}) {
         <div className="update">
             <div>
                 {/* <span onClick={handleClick} className="icon">ADD NEW TERM</span> */}
-                <a href={`/addNewTerm`}>ADD NEW TERM</a>
+                <a href={`/addNewTerm`}><Button>ADD NEW TERM</Button></a>
                 
             </div>
         </div>
