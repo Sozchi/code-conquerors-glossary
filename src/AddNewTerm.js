@@ -63,7 +63,7 @@ console.log(token);
                 <textarea className="Textarea" value={definitions}
                 onChange={(e) => setDefinitions(e.target.value)} /> 
                            
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" className="input2"/>
                      
             </form>
                 
