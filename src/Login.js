@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import Button from "./Button";
 const customStyles = {
     content: {
         top: '50%',
@@ -74,8 +75,8 @@ const Login = ({ setToken, token }) => {
     return (
         <div id="yourAppElement">
             {token.length=== 0 ? (
-                <button onClick={openModal} >LOGIN</button>)
-            :(<button onClick={handleLogout}>LOGOUT</button>)}
+                <Button onClick={openModal} >LOGIN</Button>)
+            :(<Button onClick={handleLogout}>LOGOUT</Button>)}
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}

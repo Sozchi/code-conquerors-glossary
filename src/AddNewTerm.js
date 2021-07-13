@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-// import ReactDOM from 'react-dom';
-// import { Editor, EditorState } from 'draft-js';
-// import 'draft-js/dist/Draft.css';
+import ReactDOM from 'react-dom';
+import { Editor, EditorState } from 'draft-js';
+import 'draft-js/dist/Draft.css';
 
 // function MyEditor() {
 //     const [editorState, setEditorState] = React.useState(
 //         () => EditorState.createEmpty(),
 //     );
 
-    // return <Editor editorState={editorState} onChange={setEditorState} />;
+//       return <Editor editorState={editorState} onChange={setEditorState} />;
 // }
 
 
 const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
     const [definitions, setDefinitions] = useState("");
+    const [editorState, setEditorState] = React.useState(
+        () => EditorState.createEmpty(),
+    );
    
     const history = useHistory();
     
@@ -53,17 +56,23 @@ console.log(token);
         <div className="AddTerm">
            
             {/* <div className={`${showBtn ? "active" : ""} show`}> */}
-                <form onSubmit={handleSubmit}>
-                <label></label><br></br>TERM
-                             <textarea value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
+                 <form onSubmit={handleSubmit}>  
+                 <label></label><br></br>TERM  
+                             
+                            <textarea  value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
                 <label></label><br></br>Definition
                 
-                        <textarea value={definitions}
-                            onChange={(e) => setDefinitions(e.target.value)} />
+                         <textarea value={definitions}
+                              onChange={(e) => setDefinitions(e.target.value)} /> 
+                           
+                          
                     <input type="submit" value="Submit" />
                      
-                </form>
-
+                 </form>
+                 {/* <Editor editorState={editorState} onChange={setEditorState  */}
+               
+                          
+                
             </div>
         // </div>
     )
