@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Button from "./Button";
 import Modal from "./Modal";
 
-export default function UpdatingTheTerms({ token, term, updateTerm }) {
+export default function UpdatingTheTerms({ token, term, onClose }) {
     // const [termId, setTermId] = useState(term.termid);
     const [terms, setTerms] = useState(term.term);
     const [definitions, setDefinitions] = useState(term.definition);
@@ -60,18 +60,35 @@ setDefinitions(term.definition);
         <Button onClick={() => {setShow(true); (edit(term))}} >EDIT</Button>
    
       </div>
-      <Modal show={show} onClose={() => setShow(false)}>
+      <Modal show={show} onClose={() => setShow(true)}>
         <div className="update">
             <form onSubmit={handleSubmit}>
                 <h2>Update Term</h2>
-                <label> </label> <br></br>Term:
+                <label></label> <br></br>Term
                 <textarea value={terms} onChange={(e) => setTerms(e.target.value)} />
-                <label></label> <br></br>Definition: 
+                <label></label> <br></br>Definition 
                 <textarea value={definitions} onChange={(e) => setDefinitions(e.target.value)} />
-                <br></br>
+                
+                <Button
+                    onClick={onClose}
+                    style={{
+                        width: 60,
+                        height: 40,
+                        position: "fixed",
+                        top: 0,
+                        right: 0,
+                        margin: "1rem",
+                        cursor: "pointer",
+                        
+                    }}
+                //     className={styles.close__btn}
+                 >
+                  
+          Close
+        </Button> 
                 {/* <label> </label>TermId:
                 <input type="text" value={term.termid} onChange={(e) => setTermId(e.target.value)} /> */}
-                <button type="submit">SAVE</button>
+                <button type="submit" id="button4">SAVE</button>
             </form>
         </div>
           </Modal>
