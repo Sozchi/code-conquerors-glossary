@@ -16,9 +16,9 @@ import { useHistory } from "react-router-dom";
 const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
     const [definitions, setDefinitions] = useState("");
-    const [editorState, setEditorState] = React.useState(
-        () => EditorState.createEmpty(),
-    );
+    // const [editorState, setEditorState] = React.useState(
+    //     () => EditorState.createEmpty(),
+    // );
    
     const history = useHistory();
     
@@ -54,6 +54,7 @@ console.log(token);
 
     return (
         <div className="AddTerm">
+             
            
             {/* <div className={`${showBtn ? "active" : ""} show`}> */}
                  <form onSubmit={handleSubmit}>  
@@ -64,12 +65,13 @@ console.log(token);
                 
                          <textarea value={definitions}
                               onChange={(e) => setDefinitions(e.target.value)} /> 
+                              {/* <Editor editorState={editorState}  /> */}
                            
                           
                     <input type="submit" value="Submit" />
                      
                  </form>
-                 {/* <Editor editorState={editorState} onChange={setEditorState  */}
+                
                
                           
                 

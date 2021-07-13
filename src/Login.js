@@ -85,12 +85,13 @@ const Login = ({ setToken, token }) => {
                 contentLabel="Example Modal"
             >
                 <h2 ref={(_subtitle) => (subtitle = _subtitle)}>LOGIN</h2>
-                <button onClick={closeModal}>close</button>
+                {/* <button onClick={closeModal}>close</button> */}
 
                 <form onSubmit={handleSubmit}>
                     <label>Username</label><br></br>
                     <input
                         type="email"
+                        placeholder="email"
 
                         value={email}
                         onChange={(event) => setEmail(event.target.value)} className="login-box"
@@ -98,12 +99,13 @@ const Login = ({ setToken, token }) => {
                     <label>Password</label><br></br>
                     <input
                         type="password"
+                        placeholder="password"
                         value={password}
 
                         onChange={(event) => setPassword(event.target.value)} className="login-box"
                     /><br></br>
                     <button type="submit" className="submit-btn">SUBMIT</button>
-                    <button onClick={(e) => { e.preventDefault(); setIsOpen(false) }}>X</button> 
+                    <button className="button" onClick={(e) => { e.preventDefault(); setIsOpen(false) }}>X</button> 
                 </form>
 
             </Modal>
