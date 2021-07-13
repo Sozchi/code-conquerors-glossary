@@ -2,7 +2,6 @@ import React from 'react';
 import YoutubeEmbed from "./YoutubeEmbed";
 import SearchButton from "./SearchButton";
 import { useHistory, withRouter } from 'react-router-dom';
-// import Alphabet from "./Alphabet";
 
 
 const Terms = ({ terms, search, resources, setSearch, setToken, token, handleLoginClick }) => {
@@ -44,20 +43,10 @@ const Terms = ({ terms, search, resources, setSearch, setToken, token, handleLog
                     return (
                     <div key={term.id} id={idRef}>
                         <h2 className="container" ><a href={`/singleTermPage/${term.id}`}>{term.term}</a></h2>
-                        {/* h2< className="container" onClick={() => handleClick(term.id)}>{term.term}</h2> */}
+                    
                         <p>{term.definition}</p>
 
-                        {/* {term.resources ? (
-
-                            term.resources.map((resource) =>
-                                <li key={resource.resid}>
-
-                                    <h3>{resource.link}</h3>
-                                    {embed(resource.web)}</li>)
-                        )
-                             :
-                             <h4></h4> */}
-                          {/* } */}
+                        
                      </div>
                     )}
                 )}

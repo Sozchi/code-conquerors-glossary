@@ -14,9 +14,19 @@
   background-color: white;
 }
 
+
 nav img{
   width: 147px;
   height: 60px;
+}
+
+.Input{
+  text-align: center;
+}
+
+.Input .fcSearch{
+  margin-top: 50px;
+  margin: 0px;
 }
 
 .mission {
@@ -29,8 +39,8 @@ nav img{
 }
 
 .Input form input {
+  align-items: center;
   border-radius: 10px;
-  color: white;
   cursor: pointer;
   width: 50%;
   height: 35px;
@@ -208,12 +218,12 @@ label {
   opacity: 0;
 }
 
-/* .update a{
+.update{
   box-shadow: 1px;
   text-align: justify;
   padding: 10px;
   border-radius: 10px;
-} */
+}
 
 /* .resources {
   text-align: left;
