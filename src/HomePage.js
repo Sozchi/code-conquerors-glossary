@@ -1,13 +1,15 @@
  import React from 'react';
-//  import TermsTerm from './TermsTerm';
-//  import SearchButton from "./SearchButton";
+
  import Terms from './Terms';
  import AddNewTermBtn from "./AddNewTermBtn";
+ import ReadMore from './ReadMore';
+ 
 
 
-const HomePage = ({ search, setSearch, terms, handleLoginClick, token }) => {
+const HomePage = ({ search, setSearch, terms, handleLoginClick, token, }) => {
   return (
     <div className="home">
+      
       {/* <SearchButton search={search} setSearch={setSearch} /> */}
 
       {/* <TermsTerm />    */}

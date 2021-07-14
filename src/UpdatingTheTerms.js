@@ -69,7 +69,7 @@ setDefinitions(term.definition);
                 <label></label> <br></br>Definition 
                 <textarea value={definitions} onChange={(e) => setDefinitions(e.target.value)} />
                 
-                <Button
+                <  Button
                     onClick={onClose}
                     style={{
                         width: 60,
