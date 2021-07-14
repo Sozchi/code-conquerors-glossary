@@ -39,6 +39,7 @@ setDefinitions(term.definition);
             .then((data) => {
                 console.log(data);
                 setShow(false);
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
