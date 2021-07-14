@@ -27,9 +27,9 @@ const Terms = ({ terms, search, resources, setSearch, setToken, token, handleLog
     }
    
     let prevLetter = '';
+   
     return (
         <div>
-            {/* <Nav setToken={setToken} token={token} handleLoginClick={handleLoginClick}/> */}
             <div className="Terms">
                 <SearchButton search={search} setSearch={setSearch} />
                 {/* <Alphabet /> */}

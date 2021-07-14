@@ -44,24 +44,37 @@ setDefinitions(term.definition);
                 console.log(error);
             })
     }
-    console.log(term);
+   console.log( term );
+  
+  const clearTextArea = () =>
+  {
+    setTerms( "" );
+    setDefinitions( "" );
+  };
+
+
 
     return (
-        <React.Fragment>
-    <div
-        style={{
-          display: "flex",
-          justifyContent: "right",
-          alignItems: "center",
-          height: "20vh"
-        }}
-      >
-    
-        <Button onClick={() => {setShow(true); (edit(term))}} >EDIT</Button>
-   
-      </div>
-      <Modal show={show} onClose={() => setShow(true)}>
-        <div className="update">
+      <React.Fragment>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "right",
+            alignItems: "center",
+            height: "20vh",
+          }}
+        >
+          <Button
+            onClick={() => {
+              setShow(true);
+              edit(term);
+            }}
+          >
+            EDIT
+          </Button>
+        </div>
+        <Modal show={show} onClose={() => setShow(true)}>
+          <div className="update">
             <form onSubmit={handleSubmit}>
                 <h2>Update Term</h2>
                 <label></label> <br></br>Term
@@ -90,9 +103,9 @@ setDefinitions(term.definition);
                 <input type="text" value={term.termid} onChange={(e) => setTermId(e.target.value)} /> */}
                 <button type="submit" id="button4">SAVE</button>
             </form>
-        </div>
-          </Modal>
-    </React.Fragment >
+          </div>
+        </Modal>
+      </React.Fragment>
     );
 
 }
