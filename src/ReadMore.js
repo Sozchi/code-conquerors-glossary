@@ -10,7 +10,7 @@ import React,{useState} from 'react';
         <p className="text">
           {isReadMore ? text.slice(0, 150) : text}
           <span onClick={toggleReadMore} className="read-or-hide">
-            {isReadMore ? "...read more" : " show less"}
+            {isReadMore ? "...read more" : " ..."}
           </span>
         </p>
       );
