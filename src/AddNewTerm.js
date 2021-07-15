@@ -4,22 +4,27 @@ import { useHistory } from "react-router-dom";
 // import { Editor, EditorState } from 'draft-js';
 // import 'draft-js/dist/Draft.css';
 
+
 // function MyEditor() {
 //     const [editorState, setEditorState] = React.useState(
 //         () => EditorState.createEmpty(),
 //     );
 
-//       return <Editor editorState={editorState} onChange={setEditorState} />;
+//     return <Editor editorState={editorState} onChange={setEditorState} />;
 // }
 
 
+
+
+// import { terms } from './data';
 const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
     const [definitions, setDefinitions] = useState("");
+    const [terms, setTerms] = useState([]);
     // const [editorState, setEditorState] = React.useState(
     //     () => EditorState.createEmpty(),
     // );
-   
+
     const history = useHistory();
     
     // const[languages, setLanguages]= useState("");
@@ -54,21 +59,28 @@ console.log(token);
 
     return (
         <div className="AddTerm">
-             
-            <form onSubmit={handleSubmit}>  
-                <label></label><br></br>TERM  
-                             
-                <textarea  value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
+            {/* <Editor */}
+                {/* editorState={editorState} onChange={setEditorState} /> */}
+           
+            {/* <div className={`${showBtn ? "active" : ""} show`}> */}
+            {/* <div> */}
+                <form onSubmit={handleSubmit}>
+                <label></label><br></br>TERM
+                             <textarea value={newTerm} onChange={(e) => setNewTerm(e.target.value)} />
                 <label></label><br></br>Definition
-                <textarea className="Textarea" value={definitions}
-                onChange={(e) => setDefinitions(e.target.value)} /> 
-                           
-                <input type="submit" value="Submit" className="input2"/>
-                     
-            </form>
                 
-        </div>
-        
+                        <textarea value={definitions}
+                    onChange={(e) => setDefinitions(e.target.value)} />
+                
+                
+                            
+                    <input type="submit" value="Submit" />
+                     
+                </form>
+
+            </div>
+            
+        //  </div>
     )
 
 }

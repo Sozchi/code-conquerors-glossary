@@ -2,7 +2,9 @@ import React from 'react';
 import YoutubeEmbed from "./YoutubeEmbed";
 import SearchButton from "./SearchButton";
 import { useHistory, withRouter } from 'react-router-dom';
-import ReadMore from './ReadMore'
+ import Alphabet from "./Alphabet";
+ import ReadMore from './ReadMore';
+ 
 
 
 
@@ -32,7 +34,7 @@ const Terms = ({ terms, search, resources, setSearch, setToken, token, handleLog
         <div>
             <div className="Terms">
                 <SearchButton search={search} setSearch={setSearch} />
-                {/* <Alphabet /> */}
+                 <Alphabet />
                 { filteredTerms.sort((a, b)=>{
                     const aTerm=a.term.toLowerCase();
                     const bTerm=b.term.toLowerCase();
