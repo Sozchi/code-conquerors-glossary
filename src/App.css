@@ -13,6 +13,7 @@
   min-height: 5vh;
   background-color: white;
 }
+
 .button{
   top: 0;
   right: 0;
@@ -279,4 +280,6 @@ label {
  margin-right: auto;
 }
 
-
+.AlphabethNav{
+  margin-bottom: 50px;
+}
