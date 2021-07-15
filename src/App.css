@@ -5,6 +5,7 @@
   margin: 0px;
 }
 
+
 .nav{
   width: 100%;
   display: flex;
@@ -66,6 +67,10 @@ a {
   cursor: pointer;
   color: black;
   margin: 0px;
+  
+}
+#a{
+  letter-spacing: 50px;
 }
 
 .Terms a:hover{
@@ -173,6 +178,10 @@ textarea{
   padding-left: 80px;
   border-radius: 20px;
   box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+}
+.read-or-hide{
+  color: rgb(148, 122, 221);
+  cursor: pointer;
 }
 
 .submit-btn {

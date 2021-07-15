@@ -39,6 +39,7 @@ setDefinitions(term.definition);
             .then((data) => {
                 console.log(data);
                 setShow(false);
+                window.location.reload();
             })
             .catch(function (error) {
                 console.log(error);
@@ -76,41 +77,32 @@ setDefinitions(term.definition);
         <Modal show={show} onClose={() => setShow(true)}>
           <div className="update">
             <form onSubmit={handleSubmit}>
-              <h2>Update Term</h2>
-              <label></label> <br></br>
-              <h3>Term</h3>
-              <textarea
-                className="Textarea1"
-                value={terms}
-                onChange={(e) => setTerms(e.target.value)}
-              />
-              <label></label> <br></br>
-              <h3>Definition</h3>
-              <textarea
-                className="Textarea2"
-                value={definitions}
-                onChange={(e) => setDefinitions(e.target.value)}
-              />
-              <button className="button1" type="submit" id="button4">
-                SAVE
-              </button>
-              <button onClick={clearTextArea} className="button2">
-                Clear Text
-              </button>
-              {/* <Button
-                onClick={onClose}
-                style={{
-                  width: 60,
-                  height: 40,
-                  position: "fixed",
-                  top: 0,
-                  right: 0,
-                  margin: "1rem",
-                  cursor: "pointer",
-                }}
-              >
-                Close
-              </Button> */}
+                <h2>Update Term</h2>
+                <label></label> <br></br>Term
+                <textarea value={terms} onChange={(e) => setTerms(e.target.value)} />
+                <label></label> <br></br>Definition 
+                <textarea value={definitions} onChange={(e) => setDefinitions(e.target.value)} />
+                
+                <  Button
+                    onClick={onClose}
+                    style={{
+                        width: 60,
+                        height: 40,
+                        position: "fixed",
+                        top: 0,
+                        right: 0,
+                        margin: "1rem",
+                        cursor: "pointer",
+                        
+                    }}
+                //     className={styles.close__btn}
+                 >
+                  
+          Close
+        </Button> 
+                {/* <label> </label>TermId:
+                <input type="text" value={term.termid} onChange={(e) => setTermId(e.target.value)} /> */}
+                <button type="submit" id="button4">SAVE</button>
             </form>
           </div>
         </Modal>
