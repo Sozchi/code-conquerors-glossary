@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import ReactDOM from 'react-dom';
-import { Editor, EditorState } from 'draft-js';
-import 'draft-js/dist/Draft.css';
+// import ReactDOM from 'react-dom';
+// import { Editor, EditorState } from 'draft-js';
+// import 'draft-js/dist/Draft.css';
 
 
 // function MyEditor() {
@@ -21,16 +21,12 @@ const AddNewTerm = ({ token, showBtn }) => {
     const [newTerm, setNewTerm] = useState("");
     const [definitions, setDefinitions] = useState("");
     const [terms, setTerms] = useState([]);
-    const [editorState, setEditorState] = React.useState(
-        () => EditorState.createEmpty(),
-    );
+    // const [editorState, setEditorState] = React.useState(
+    //     () => EditorState.createEmpty(),
+    // );
 
     const history = useHistory();
-    function addNewTerm(e){
-        const newTerm=e.target.value;
-        console.log(newTerm);
-        setTerms(terms => [...terms, newTerm]);
-    }
+    
     // const[languages, setLanguages]= useState("");
     function handleSubmit(e) {
         e.preventDefault();
@@ -63,8 +59,8 @@ console.log(token);
 
     return (
         <div className="AddTerm">
-            <Editor
-                editorState={editorState} onChange={setEditorState} />
+            {/* <Editor */}
+                {/* editorState={editorState} onChange={setEditorState} /> */}
            
             {/* <div className={`${showBtn ? "active" : ""} show`}> */}
             {/* <div> */}
@@ -79,6 +75,7 @@ console.log(token);
                 
                             
                     <input type="submit" value="Submit" />
+                     
                 </form>
 
             </div>
