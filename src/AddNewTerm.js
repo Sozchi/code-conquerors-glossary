@@ -45,7 +45,8 @@ console.log(token);
             .then((response) => response.json())
             .then((data) => {
                 console.log(data)
-                alert("New term has been added successfully" );
+                alert(data.message);
+                // alert("New term has been added successfully" );
                 history.push("/");
                 window.location.reload();
             })
